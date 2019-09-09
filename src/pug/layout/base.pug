@@ -9,10 +9,12 @@ html(lang="ru")
         - var activePage
         title= pageTitle
         link(href="static/css/main.css", rel="stylesheet") 
+        link(rel="shortcut icon" href="static/img/abz-a-favicon.png")
+        link(href="https://fonts.googleapis.com/css?family=Overpass:600|Source+Sans+Pro:400,700&display=swap" rel="stylesheet")
     body
-        //- if header
-        //- include ../modules/header/module
+        include ../modules/header/module
         block content
-        //- include ../modules/footer/module
+        include ../modules/footer/module
         block scripts
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         script(src="static/js/main.js")

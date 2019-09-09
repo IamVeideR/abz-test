@@ -1,48 +1,127 @@
 body {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     outline: none;
+    transition-duration: 0.3s;
 }
-
+g {
+    transition-duration: 0s;  
+}
 a {
+    color: inherit;
 }
 
 p {
+    font-size: 16px;
+    line-height: 22px;
 }
 
+h1, h2, h3, h4 {
+    font-family: 'Overpass', sans-serif;
+}
 h1 {
+    font-size: 50px;
+    line-height: 60px;
 }
-
+h2 {
+    font-size: 42px;
+    line-height: 51px;
+}
+h3 {
+    font-size: 26px;
+    line-height: 31px;
+}
+h4 {
+    font-size: 22px;
+    line-height: 36px;
+}
+h5 {
+    font-size: 19px;
+    line-height: 24px;
+}
+.reverse-button {
+    width: 290px;
+    height: 40px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: inherit;
+    color: $orange;
+    border: 2px solid $orange;
+    font-size: 20px;
+    line-height: 34px;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
 .base-button {
+    width: 290px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: $orange;
+    color: white;
+    font-size: 20px;
+    line-height: 38px;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+.button {
+    color: $orange;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .base-button:hover {
+    opacity: 0.8;
 }
+.reverse-button:hover {
+    background-color: rgba($orange,0.2);
+    opacity: 0.8;
+}
+.button:hover {
+    opacity: 0.8;
+}
+
 
 .container {
     margin: 0 auto;
-    max-width: 1160px;
+    max-width: 1170px;
     display: flex;
     width: 100%;
     box-sizing: border-box;
 }
-
+.title {
+    margin: 0 auto;
+    max-width: 1170px;
+    text-align: center; 
+}
 .active {
 }
 
 
-@media (max-width: $desktop) {
-    .container {
-        padding-right: 15px;
-        padding-left: 15px;
+@media (max-width: $wrapL) {
+    .container, .title {
+        padding-right: 45px;
+        padding-left: 45px;
+        max-width: 1020px;
+    }
+}
+@media (max-width: $laptopXs) {
+    .container, .title {
+        padding-right: 20px;
+        padding-left: 20px;
     }
 }
 
 @media (max-width: $mobileL) {
-    .container {
-        padding-right: 5px;
-        padding-left: 5px;
+    .container, .title {
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }

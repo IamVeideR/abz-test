@@ -5,7 +5,7 @@ global.$ = {
     gp: require ('gulp-load-plugins')(),
     bs: require ('browser-sync').create(),
     path: {
-        tasks: require('./template/config/tasks.js')
+        tasks: require('./bundler/config/tasks.js')
     }
 }; 
 
@@ -15,6 +15,6 @@ $.path.tasks.forEach(function (taskPath) {
 
 $.gulp.task('default', $.gulp.series(
     $.gulp.parallel('pug','sass','scripts:lib','scripts','img','fonts')
-    // ,
-    // $.gulp.parallel('watch','serve')
+    ,
+    $.gulp.parallel('watch','serve')
 )); 

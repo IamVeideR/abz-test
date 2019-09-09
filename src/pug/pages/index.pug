@@ -4,4 +4,78 @@ block variables
     - pageTitle = '' 
     - activePage = 'main'
 block content
-    p Hello World!
+    section.banner
+        .banner__container.container
+            .banner__block
+                h1.banner__title Test assignment for Frontend Developer position
+                .banner__text We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository. Please be patient, we consider and respond to every application that meets minimum requirements. We look forward to your submission. Good luck!
+                a(href="#signUp").banner__button.base-button Sign Up
+    section.about
+        a(name="about")
+        h2.about__title.title Let's get acquainted
+        .about__container.container
+            .about__image
+                .about__picture
+            .about__block
+                h3.block__title I am cool frontend developer
+                p.block__text When real users have a slow experience on mobile, they're much less likely to find what they are looking for or purchase from you in the future. For many sites this equates to a huge missed opportunity, especially when more than half of visits are abandoned if a mobile page takes over 3 seconds to load.
+                p.block__text Last week, Google Search and Ads teams announced two new speed initiatives to help improve user-experience on the web. 
+                a(href="#signUp").block__button.button Sign Up
+    section.relationships
+        a(name="relationships")
+        h2.relationships__title.title About my relationships with web-development
+        .relationships__container.container
+            .relationships__item
+                .item__image
+                    .item__picture(style='background-image: url(static/img/html.svg)')
+                h3.item__title I'm in love with HTML
+                p.item__text Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications.
+            .relationships__item
+                .item__image
+                    .item__picture(style='background-image: url(static/img/css.svg)')
+                h3.item__title CSS is my best friend  
+                p.item__text Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.
+            .relationships__item
+                .item__image
+                    .item__picture(style='background-image: url(static/img/javascript.svg)')
+                h3.item__title JavaScript is my passion
+                p.item__text JavaScript is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.
+    section.requirements
+        a(name="requirements")
+        h2.requirements__title.title General requirements for the test task
+        .requirements__container.container
+            .requirements__block
+                p.requirements__text Users want to find answers to their questions quickly and data shows that people really care about how quickly their pages load. The Search team announced speed would be a ranking signal for desktop searches in 2010 and as of this month (July 2018), page speed will be a ranking factor for mobile searches too.
+                p.requirements__text If you're a developer working on a site, now is a good time to evaluate your performance using our speed tools. Think about how performance affects the user experience of your pages and consider measuring a variety of real-world user-centric performance metrics.
+                p.requirements__text Are you shipping too much JavaScript? Too many images? Images and JavaScript are the most significant contributors to the page weight that affect page load time based on data from HTTP Archive and the Chrome User Experience Report - our public dataset for key UX metrics as experienced by Chrome users under real-world conditions.
+            .requirements__image
+                    .requirements__picture
+    section.users
+        a(name="users")
+        h2.users__title.title Our cheerful users
+        h5.users__subtitle.title Attention! Sorting users by registration date
+        .users__container.container
+            .users__block
+            .users__more.reverse-button Show more
+    section.sign-up
+        a(name="signUp")
+        h2.sign-up__title.title Register to get a work
+        h5.sign-up__subtitle.title Attention! After successful registration and alert, update the list of users in the block from the top
+        .sign-up__container.container
+            form.sign-up__form(action="https://frontend-test-assignment-api.abz.agency/api/v1/users" id="app" @submit="checkForm" method ='POST')
+                input(type="text" name="name" id="name" v-model="name").sign-up__name
+                input(type="mail" name="mail" id="mail" v-model="mail").sign-up__mail
+                input(type='tel' pattern="+380[0-9]{7}" val='+380' name="phone" id="phone" v-model="phone").sign-up__phone
+                select(name="profession" id="profession" v-model="profession").sign-up__profession
+                    <option>Star Wars</option>
+                    <option>Vanilla Sky</option>
+                    <option>Atomic Blonde</option>
+                    <option>Star Wars</option>
+                input(type ='file' name="photo" id="photo" v-on:change="handleFileUpload()").sign-up__photo
+                input(type="submit" v-on:click="submitFile()" value="Sign Up").sign-up__button.base-button
+            //- <p v-if="errors.length">
+            //-     <b>Please correct the following error(s):</b>
+            //-     <ul>
+            //-     <li v-for="error in errors">{{ error }}</li>
+            //-     </ul>
+            //- </p>
